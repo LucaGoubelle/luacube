@@ -32,7 +32,7 @@ function RotateHelpers:copyFace(face)
         end
         table.insert(newFace, row)
     end
-    return face
+    return newFace
 end
 
 function RotateHelpers:rotate(face)

@@ -14,7 +14,19 @@ function AxisMoves:new()
 end
 
 function AxisMoves:moveY(cube)
-    -- todo: implement this
+    cube.up = self.rh:rotate(cube.up)
+    cube.down = self.rh:rotateAsync(cube.down)
+
+    newFront = self.rh:copyFace(cube.right)
+    newLeft = self.rh:copyFace(cube.front) 
+    newRight = self.rh:copyFace(cube.back)
+    newBack = self.rh:copyFace(cube.left)
+
+    cube.front = self.rh:transfert(cube.front, newFront)
+    cube.left = self.rh:transfert(cube.left, newLeft)
+    cube.right = self.rh:transfert(cube.right, newRight)
+    cube.back = self.rh:transfert(cube.back, newBack)
+
     return cube
 end
 
@@ -34,7 +46,19 @@ end
 
 
 function AxisMoves:moveX(cube)
-    -- todo: implement this
+    cube.right = self.rh:rotate(cube.right)
+    cube.left = self.rh:rotateAsync(cube.left)
+
+    newFront = self.rh:copyFace(cube.down)
+    newUp = self.rh:copyFace(cube.front)
+    newBack = self.rh:rotateTwice(self.rh:copyFace(cube.up))
+    newDown = self.rh:rotateTwice(self.rh:copyFace(cube.back))
+
+    cube.front = self.rh:transfert(cube.front, newFront)
+    cube.up = self.rh:transfert(cube.up, newUp)
+    cube.back = self.rh:transfert(cube.back, newBack)
+    cube.down = self.rh:transfert(cube.down, newDown)
+    
     return cube
 end
 
@@ -54,7 +78,19 @@ end
 
 
 function AxisMoves:moveZ(cube)
-    -- todo: implement this
+    cube.front = self.rh:rotate(cube.front)
+    cube.back = self.rh:rotateAsync(cube.back)
+
+    newUp = self.rh:rotate(self.rh:copyFace(cube.left))
+    newRight = self.rh:rotate(self.rh:copyFace(cube.up))
+    newLeft = self.rh:rotate(self.rh:copyFace(cube.down))
+    newDown = self.rh:rotate(self.rh:copyFace(cube.right))
+
+    cube.up = self.rh:transfert(cube.up, newUp)
+    cube.right = self.rh:transfert(cube.right, newRight)
+    cube.left = self.rh:transfert(cube.left, newLeft)
+    cube.down = self.rh:transfert(cube.down, newDown)
+
     return cube
 end
 
