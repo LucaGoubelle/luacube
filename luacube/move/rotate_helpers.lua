@@ -37,7 +37,7 @@ end
 
 function RotateHelpers:rotate(face)
     local size = #face
-    local newFace = RotateHelpers:genEmptyFace(size)
+    local newFace = self:genEmptyFace(size)
     for i = 1, size do
         local cnt = size
         for j = 1, size do
@@ -50,7 +50,7 @@ end
 
 function RotateHelpers:rotateAsync(face)
     local size = #face
-    local newFace = RotateHelpers:genEmptyFace(size)
+    local newFace = self:genEmptyFace(size)
     local cnt = size
     for i = 1,size do
         for j = 1, size do
@@ -62,8 +62,8 @@ function RotateHelpers:rotateAsync(face)
 end
 
 function RotateHelpers:rotateTwice(face)
-    local newFace = RotateHelpers:rotate(face)
-    rotatedFace = RotateHelpers:rotate(newFace)
+    local newFace = self:rotate(face)
+    rotatedFace = self:rotate(newFace)
     return rotatedFace
 end
 
