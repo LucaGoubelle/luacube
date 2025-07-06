@@ -2,8 +2,9 @@
 require "luacube.all"
 
 local builder = CubeBuilder:new()
-local printer = CubePrinter:new()
 local mover = Mover:new()
+local scrambler = CubeScrambler:new()
+local printer = CubePrinter:new()
 
 local sizeCube = 3
 local cube = builder:build(sizeCube)
@@ -20,10 +21,10 @@ while true do
     cube = mover:simpleMove(cube, mv)
 
     -- CMD handle
-    if mv == "exit"
-    then
-        break
-    end
+    if mv == "exit" then break
+    elseif mv =="scramble" then cube = scrambler:scramble(cube)
+    elseif mv == "init" then cube = builder:build(sizeCube)
+    else print("Unknown command / move...") end
 
     print("\n-------------------------------------------------\n\n")
 end
