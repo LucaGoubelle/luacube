@@ -1,3 +1,4 @@
+- implement main loop for interractions
 - implement moves submodule
 - implement a scrambler
 ? - implement a solver if possible
