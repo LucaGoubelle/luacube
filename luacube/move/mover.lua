@@ -1,5 +1,6 @@
 require "luacube.move.std_moves"
 require "luacube.move.axis_moves"
+require "luacube.move.w_moves"
 
 -- cube mover
 -- @author: LucaGoubelle
@@ -8,7 +9,8 @@ Mover={}
 function Mover:new()
     local obj = {
         _stdMoves = STDMoves:new(),
-        _axisMoves = AxisMoves:new()
+        _axisMoves = AxisMoves:new(),
+        _wMoves = WMoves:new()
     }
     setmetatable(obj, self)
     self.__index = self
@@ -41,6 +43,13 @@ function Mover:simpleMove(cube, mv)
     elseif mv == "F" then cube = self._stdMoves:moveF(cube)
     elseif mv == "F'" then cube = self._stdMoves:moveFPrime(cube)
     elseif mv == "F2" then cube = self._stdMoves:moveF2(cube)
+
+    elseif mv == "Uw" then cube = self._wMoves:moveUw(cube)
+    elseif mv == "Uw'" then cube = self._wMoves:moveUwPrime(cube)
+    elseif mv == "Uw2" then cube = self._wMoves:moveUw2(cube)
+    elseif mv == "Dw" then cube = self._wMoves:moveDw(cube)
+    elseif mv == "Dw'" then cube = self._wMoves:moveDwPrime(cube)
+    elseif mv == "Dw2" then cube = self._wMoves:moveDw2(cube)
 
     elseif mv == "y" then cube = self._axisMoves:moveY(cube)
     elseif mv == "y'" then cube = self._axisMoves:moveYPrime(cube)
