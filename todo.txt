@@ -1,4 +1,8 @@
-- implement main loop for interractions
-- implement moves submodule
-- implement a scrambler
-? - implement a solver if possible
+v - implement main loop for interractions
+v - implement moves submodule
+v - implement a scrambler
+
+- implement a solver if possible
+-- implement solver helpers
+-- implement simple 2x2 solver
+-- implement simple 3x3 solver
