@@ -43,6 +43,6 @@ function WBRProcessor:new()
 end
 
 function WBRProcessor:process(inputData)
-    local result = data[inputData] or "???"
+    local result = self.data[inputData] or "???"
     return result
 end
