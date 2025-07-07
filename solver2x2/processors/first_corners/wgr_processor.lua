@@ -8,19 +8,19 @@ WGRProcessor={}
 function WGRProcessor:new()
     local obj = {
         data = {
-            up_front_right__white_green_red = "U' y "+ca.ELEVATOR+" y'",
+            up_front_right__white_green_red = "U' y "..ca.ELEVATOR.." y'",
             up_front_right__red_white_green = "U' R' U' R",
             up_front_right__green_red_white = "U2 R' U R",
 
-            up_front_left__white_red_green = "U2 y "+ca.ELEVATOR+" y'",
+            up_front_left__white_red_green = "U2 y "..ca.ELEVATOR.." y'",
             up_front_left__green_white_red = "R' U2 R",
             up_front_left__red_green_white = "U2 R' U' R",
 
-            up_back_right__white_red_green = "y "+ca.ELEVATOR+" y'",
+            up_back_right__white_red_green = "y "..ca.ELEVATOR.." y'",
             up_back_right__green_white_red = "U' R' U R",
             up_back_right__red_green_white = "R' U' R",
             
-            up_back_left__white_green_red = "U y "+ca.ELEVATOR+" y'",
+            up_back_left__white_green_red = "U y "..ca.ELEVATOR.." y'",
             up_back_left__red_white_green = "U R' U' R",
             up_back_left__green_red_white = "R' U R",
 
