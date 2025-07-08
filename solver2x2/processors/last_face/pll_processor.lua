@@ -1,3 +1,7 @@
+require "solver_helpers.cube_algorithms"
+
+local ca = CubeAlgorithms:new()
+
 -- PLLs processor
 PLLProcessor={}
 

@@ -13,7 +13,7 @@ function CrownCaster:cast(crown)
     local result = ""
     for _,row in pairs(crown) do
         for _,elem in pairs(row) do
-            result = result..(elem=="yellow" and "1" or "0")
+            result = result..(elem=="yellow" and "T" or "F")
         end
         result = result.."_"
     end
