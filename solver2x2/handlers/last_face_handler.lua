@@ -29,7 +29,7 @@ function LastFaceHandler:handleOLL(cube)
 end
 
 function LastFaceHandler:handlePLL(cube)
-    local pllConfig = self.pllScanner:scanOLL(cube)
+    local pllConfig = self.pllScanner:scanPLL(cube)
     local sequence = self.pllProc:process(pllConfig)
     cube = self.mover:multiMoves(cube, sequence)
     return cube

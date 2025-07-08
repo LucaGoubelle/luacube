@@ -6,9 +6,9 @@ require "solver2x2.processors.first_corners.wgo_processor"
 require "solver2x2.processors.first_corners.wbo_processor"
 
 -- first corner handler
-FirstCornerHandler={}
+FirstCornersHandler={}
 
-function FirstCornerHandler:new()
+function FirstCornersHandler:new()
     local obj = {
         mover = Mover:new(),
         seeker = Corner2Seeker:new(),
@@ -22,7 +22,7 @@ function FirstCornerHandler:new()
     return obj
 end
 
-function FirstCornerHandler:handleWGR(cube)
+function FirstCornersHandler:handleWGR(cube)
     local corner = self.seeker:seekCorner(cube, {
         "white_green_red","white_red_green",
         "green_white_red","green_red_white",
@@ -33,7 +33,7 @@ function FirstCornerHandler:handleWGR(cube)
     return cube
 end
 
-function FirstCornerHandler:handleWGO(cube)
+function FirstCornersHandler:handleWGO(cube)
     local corner = self.seeker:seekCorner(cube, {
         "white_green_orange","white_orange_green",
         "green_white_orange","green_orange_white",
@@ -44,7 +44,7 @@ function FirstCornerHandler:handleWGO(cube)
     return cube
 end
 
-function FirstCornerHandler:handleWBO(cube)
+function FirstCornersHandler:handleWBO(cube)
     local corner = self.seeker:seekCorner(cube, {
         "white_blue_orange","white_orange_blue",
         "blue_white_orange","blue_orange_white",
@@ -55,7 +55,7 @@ function FirstCornerHandler:handleWBO(cube)
     return cube
 end
 
-function FirstCornerHandler:handle(cube)
+function FirstCornersHandler:handle(cube)
     cube = self:handleWGR(cube)
     cube = self:handleWGO(cube)
     cube = self:handleWBO(cube)
