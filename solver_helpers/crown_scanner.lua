@@ -38,7 +38,7 @@ function CrownScanner:_scanUpOfCrown(cube, index)
     for i = 1, len do
         table.insert(row, cube.up[index][i])
     end
-    table.insert(row, cube.right[1][len-index])
+    table.insert(row, cube.right[1][len+1-index])
     return row
 end
 
