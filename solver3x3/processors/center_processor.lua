@@ -3,7 +3,11 @@ CenterProcessor={}
 
 function CenterProcessor:new()
     local obj = {
-        data = {}
+        data = {
+            white_blue="z2",
+            white_green="x2",
+            yellow_green="y2"
+        }
     }
     setmetatable(obj, self)
     self.__index = self
