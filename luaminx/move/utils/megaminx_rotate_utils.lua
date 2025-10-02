@@ -24,6 +24,20 @@ function MegaminxRotateUtils:genEmptyFace()
     return face
 end
 
+function MegaminxRotateUtils:copyFace(face)
+    local new_face = {}
+    local new_ring1 = {}
+    local new_ring2 = {}
+    for i=1,10 do
+        table.insert(new_ring1, face[1][i])
+    end
+    table.insert(new_ring2, face[2][1])
+    -- merge data
+    table.insert(new_face, new_ring1)
+    table.insert(new_face, new_ring2)
+    return new_face
+end
+
 function MegaminxRotateUtils:rotate(face)
     local new_face = self:genEmptyFace()
 

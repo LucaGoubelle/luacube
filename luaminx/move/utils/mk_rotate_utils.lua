@@ -26,6 +26,22 @@ function MasterKilominxRotateUtils:genEmptyFace()
     return face
 end
 
+function MasterKilominxRotateUtils:copyFace(face)
+    local new_face = {}
+    local new_ring1 = {}
+    local new_ring2 = {}
+    for i=1,15 do
+        table.insert(new_ring1, face[1][i])
+    end
+    for i=1,5 do
+        table.insert(new_ring2, face[2][i])
+    end
+    -- merge data
+    table.insert(new_face, new_ring1)
+    table.insert(new_face, new_ring2)
+    return new_face
+end
+
 function MasterKilominxRotateUtils:rotate(face)
     local new_face = self:genEmptyFace()
     

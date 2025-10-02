@@ -18,6 +18,14 @@ function KilominxRotateUtils:genEmptyFace()
     return face
 end
 
+function KilominxRotateUtils:copyFace(face)
+    local new_face = {}
+    for i=1,5 do
+        table.insert(new_face, face[i])
+    end
+    return new_face
+end
+
 function KilominxRotateUtils:rotate(face)
     local new_face = self:genEmptyFace()
     new_face[1] = face[5]
