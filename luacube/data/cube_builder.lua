@@ -29,11 +29,12 @@ end
 -------------------------------
 
 function CubeBuilder:build(size)
-    local back = CubeBuilder:_buildFace(size, "green")
-    local up = CubeBuilder:_buildFace(size, "yellow")
-    local front = CubeBuilder:_buildFace(size, "blue")
-    local left = CubeBuilder:_buildFace(size, "orange")
-    local right = CubeBuilder:_buildFace(size, "red")
-    local down = CubeBuilder:_buildFace(size, "white")
+    local back = self:_buildFace(size, "green")
+    local up = self:_buildFace(size, "yellow")
+    local front = self:_buildFace(size, "blue")
+    local left = self:_buildFace(size, "orange")
+    local right = self:_buildFace(size, "red")
+    local down = self:_buildFace(size, "white")
+    
     return Cube:new(back, up, front, left, right, down)
 end
