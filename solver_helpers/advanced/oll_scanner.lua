@@ -1,5 +1,5 @@
 require "solver_helpers.crown_scanner"
-require "solver_helpers.crown_caster"
+require "solver_helpers.casters.crown_caster"
 -- oll scanner
 -- @author: LucaGoubelle
 OLLScanner={}
