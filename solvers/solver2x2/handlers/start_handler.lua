@@ -1,6 +1,6 @@
 require "solver_helpers.scanners.cube_2x2_scanner"
 require "solver_helpers.seekers.corner_2_seeker"
-require "solver2x2.processors.first_corners.wbr_processor"
+require "solvers.solver2x2.processors.first_corners.wbr_processor"
 require "luacube.move.mover"
 -- start handler
 StartHandler={}

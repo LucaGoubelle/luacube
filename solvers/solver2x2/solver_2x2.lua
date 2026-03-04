@@ -1,6 +1,6 @@
-require "solver2x2.handlers.start_handler"
-require "solver2x2.handlers.first_corners_handler"
-require "solver2x2.handlers.last_face_handler"
+require "solvers.solver2x2.handlers.start_handler"
+require "solvers.solver2x2.handlers.first_corners_handler"
+require "solvers.solver2x2.handlers.last_face_handler"
 -- solver 2x2
 -- @author: LucaGoubelle
 Solver2x2={}

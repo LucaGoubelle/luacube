@@ -1,9 +1,9 @@
 require "luacube.move.mover"
 require "solver_helpers.seekers.corner_2_seeker"
 
-require "solver2x2.processors.first_corners.wgr_processor"
-require "solver2x2.processors.first_corners.wgo_processor"
-require "solver2x2.processors.first_corners.wbo_processor"
+require "solvers.solver2x2.processors.first_corners.wgr_processor"
+require "solvers.solver2x2.processors.first_corners.wgo_processor"
+require "solvers.solver2x2.processors.first_corners.wbo_processor"
 
 -- first corner handler
 FirstCornersHandler={}

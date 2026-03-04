@@ -1,6 +1,6 @@
 -- entry point
 require "luacube.all"
-require "solver2x2.solver_2x2"
+require "solvers.solver2x2.solver_2x2"
 
 local builder = CubeBuilder:new()
 local dumper = CubeDumper:new()

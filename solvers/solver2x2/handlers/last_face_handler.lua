@@ -2,8 +2,8 @@ require "luacube.move.mover"
 require "solver_helpers.advanced.oll_scanner"
 require "solver_helpers.advanced.pll_scanner"
 
-require "solver2x2.processors.last_face.oll_processor"
-require "solver2x2.processors.last_face.pll_processor"
+require "solvers.solver2x2.processors.last_face.oll_processor"
+require "solvers.solver2x2.processors.last_face.pll_processor"
 
 -- last face handler
 LastFaceHandler={}

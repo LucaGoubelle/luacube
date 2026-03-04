@@ -1,4 +1,4 @@
-require "solver3x3.processors.center_processor"
+require "solvers.solver3x3.processors.center_processor"
 require "solver_helpers.scanners.cube_3x3_scanner"
 require "luacube.move.mover"
 -- start handler
