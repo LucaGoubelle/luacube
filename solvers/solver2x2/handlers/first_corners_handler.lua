@@ -1,24 +1,22 @@
-require "luacube.move.mover"
+
 require "solver_helpers.seekers.corner_2_seeker"
 
+require "solvers.solver2x2.handlers.handler"
 require "solvers.solver2x2.processors.first_corners.wgr_processor"
 require "solvers.solver2x2.processors.first_corners.wgo_processor"
 require "solvers.solver2x2.processors.first_corners.wbo_processor"
 
 -- first corner handler
-FirstCornersHandler={}
+FirstCornersHandler=setmetatable({}, {__index=Handler})
+FirstCornersHandler.__index = FirstCornersHandler
 
 function FirstCornersHandler:new()
-    local obj = {
-        mover = Mover:new(),
-        seeker = Corner2Seeker:new(),
-        -- processors
-        wgrProc = WGRProcessor:new(),
-        wgoProc = WGOProcessor:new(),
-        wboProc = WBOProcessor:new()
-    }
-    setmetatable(obj, self)
-    self.__index = self
+    local obj = setmetatable(Handler:new(), self)
+    obj.seeker = Corner2Seeker:new()
+    -- processors
+    obj.wgrProc = WGRProcessor:new()
+    obj.wgoProc = WGOProcessor:new()
+    obj.wboProc = WBOProcessor:new()
     return obj
 end
 

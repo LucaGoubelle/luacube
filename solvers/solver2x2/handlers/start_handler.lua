@@ -1,19 +1,17 @@
 require "solver_helpers.scanners.cube_2x2_scanner"
 require "solver_helpers.seekers.corner_2_seeker"
+
 require "solvers.solver2x2.processors.first_corners.wbr_processor"
-require "luacube.move.mover"
+require "solvers.solver2x2.handlers.handler"
 -- start handler
-StartHandler={}
+StartHandler= setmetatable({}, {__index=Handler})
+StartHandler.__index = StartHandler
 
 function StartHandler:new()
-    local obj = {
-        scanner = Cube2x2Scanner:new(),
-        seeker = Corner2Seeker:new(),
-        wbrProcessor = WBRProcessor:new(),
-        mover = Mover:new()
-    }
-    setmetatable(obj, self)
-    self.__index = self
+    local obj = setmetatable(Handler:new(), self)
+    obj.scanner = Cube2x2Scanner:new()
+    obj.seeker = Corner2Seeker:new()
+    obj.wbrProcessor = WBRProcessor:new()
     return obj
 end
 

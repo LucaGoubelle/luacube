@@ -1,23 +1,21 @@
-require "luacube.move.mover"
+-- require "luacube.move.mover"
 require "solver_helpers.advanced.oll_scanner"
 require "solver_helpers.advanced.pll_scanner"
 
+require "solvers.solver2x2.handlers.handler"
 require "solvers.solver2x2.processors.last_face.oll_processor"
 require "solvers.solver2x2.processors.last_face.pll_processor"
 
--- last face handler
-LastFaceHandler={}
+-- last face handler extends Handler
+LastFaceHandler= setmetatable({}, {__index = Handler})
+LastFaceHandler.__index = LastFaceHandler
 
 function LastFaceHandler:new()
-    local obj = {
-        mover = Mover:new(),
-        ollScanner = OLLScanner:new(),
-        pllScanner = PLLScanner:new(),
-        ollProc = OLLProcessor:new(),
-        pllProc = PLLProcessor:new()
-    }
-    setmetatable(obj, self)
-    self.__index = self
+    local obj = setmetatable(Handler:new(), self)
+    obj.ollScanner = OLLScanner:new()
+    obj.pllScanner = PLLScanner:new()
+    obj.ollProc = OLLProcessor:new()
+    obj.pllProc = PLLProcessor:new()
     return obj
 end
 
