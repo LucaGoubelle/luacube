@@ -1,17 +1,14 @@
 require "solvers.solver3x3.processors.center_processor"
+require "solvers.solver3x3.handlers.handler"
 require "solver_helpers.scanners.cube_3x3_scanner"
-require "luacube.move.mover"
 -- start handler
-StartHandler = {}
+StartHandler = setmetatable({}, {__index = Handler})
+StartHandler.__index = StartHandler
 
 function StartHandler:new()
-    local obj = {
-        proc = CenterProcessor:new()
-        mover = Mover:new()
-        scanner = Cube3x3Scanner:new()
-    }
-    setmetatable(obj, self)
-    self.__index = self
+    local obj = setmetatable(Handler:new(), self)
+    obj.proc = CenterProcessor:new()
+    obj.scanner = Cube3x3Scanner:new()
     return obj
 end
 
